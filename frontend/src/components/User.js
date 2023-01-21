@@ -1,6 +1,3 @@
-import Header from "./Header";
-
-
 const UserItem = ({user, index}) => {
   return (
     <tr>
@@ -15,23 +12,20 @@ const UserItem = ({user, index}) => {
 
 const UserList = ({users}) => {
   return (
-    <div className="container">
-      <Header />
-      <table className="table">
-        <thead className="table-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Username</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => <UserItem key={user.email} user={user} index={index}/>)}
-        </tbody>
-      </table>
-    </div>
+    <table className="table">
+      <thead className="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user, index) => <UserItem key={user.email} user={user} index={index}/>)}
+      </tbody>
+    </table>
   )
 }
 
